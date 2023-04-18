@@ -3,6 +3,9 @@ yum -y update
 yum -y install httpd
 sudo yum install git -y
 git clone https://github.com/PAYNEA03/AWEXTerraformLab.git
+
+sed -i "s|https://ifuwchvwd5.execute-api.eu-west-2.amazonaws.com/default/ACGDevFunction|${lambdaURL}|g" ./AWEXTerraformLab/site_files/index.html
+
 cp /AWEXTerraformLab/site_files/index.html /var/www/html/
 service httpd start
 chkconfig httpd on

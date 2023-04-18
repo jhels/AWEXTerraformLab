@@ -16,3 +16,8 @@ variable "instance_profile" {
   description = "role created in iam module to attach on to instance"
 }
 
+variable "lambdaURL" {
+  type    = string
+  default = ""
+}
+

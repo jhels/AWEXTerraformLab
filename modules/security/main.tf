@@ -10,7 +10,7 @@ resource "aws_security_group_rule" "public_ingress" {
   to_port           = 80
   protocol          = "tcp"
   cidr_blocks       = ["0.0.0.0/0"]
-  security_group_id = aws_security_group.prod_web.security_group_id
+  security_group_id = aws_security_group.prod_web.id
 }
 
 

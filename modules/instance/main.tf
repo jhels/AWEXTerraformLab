@@ -29,7 +29,11 @@ resource "aws_instance" "prod_web" {
     }
   }
 
-  user_data = file("${path.module}/../../site_files/instanceUserData.tpl")
+  user_data = templatefile("${path.module}/../../site_files/instanceUserData.tftpl", {
+    lambdaURL = var.lambdaURL
+  })
+
+
 
   tags = {
     "Name" : "${var.project_name}_${count.index + 1}"
