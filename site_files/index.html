@@ -14,6 +14,18 @@
                 xhttp.open("GET", "https://ifuwchvwd5.execute-api.eu-west-2.amazonaws.com/default/ACGDevFunction", true);
                 xhttp.send()
             }
+
+            const myFunctionTwo = () => {
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        var text = JSON.parse(this.responseText)
+                        document.getElementById("my-demoTwo").innerHTML = text['this']
+                    }
+                };
+                xhttp.open("GET", "https://gggg.execute-api.eu-west-2.amazonaws.com/default/ACGDevFunction", true);
+                xhttp.send()
+            }
         </script>
         <title>Basic Web Page</title>
     </head>
@@ -21,5 +33,9 @@
         <h1> <span id="my-demo">Hello Airwalk!</span></h1>
         <p>And Hello World!</p>
         <button onclick="myFunction()">Click me</button>
+
+        <h2> <span id="my-demoTwo">Hello Airwalk!</span></h2>
+        <p>And Hello World v2!</p>
+        <button onclick="myFunctionTwo()">Click me</button>
     </body>
 </html>
