@@ -23,3 +23,6 @@ To reference module outputs, the convention is module.{my_module_name}.{module_o
 
 
 Global variables required are in the variables.tf file. enter custom variable parameters inside the terraform.tfvars file ( format is var_name = var_value )
+
+
+requires AWS CLI to be installed and a named profile setup. This profile name should be added to the profile variable in the .tfvars file. Instructions to setup AWS CLI profiles at: https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html
